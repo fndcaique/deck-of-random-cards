@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import AppContext from '../context/AppContext';
 
-const Login: React.FC = () => {
+function Login() {
   const [name, setName] = useState('');
   const { login } = useContext(AppContext);
 
@@ -30,6 +30,6 @@ const Login: React.FC = () => {
       </form>
     </div>
   );
-};
+}
 
 export default Login;
