@@ -2,6 +2,9 @@
   "name": "deck-of-random-cards",
   "version": "0.1.0",
   "private": false,
+  "engines": {
+    "node": "16"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
