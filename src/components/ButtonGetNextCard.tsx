@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import AppContext from '../context/AppContext';
-import scrollTop from '../helpers/scrollTop';
+import { scrollBottom } from '../helpers/scroll';
 import Button, { ButtonProps } from './Button';
 
 function ButtonGetNextCard({ large }: ButtonProps) {
@@ -12,7 +12,7 @@ function ButtonGetNextCard({ large }: ButtonProps) {
       type="button"
       onClick={() => {
         getNextCharacter();
-        scrollTop(500);
+        scrollBottom(500);
       }}
     >
       Puxar

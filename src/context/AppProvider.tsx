@@ -40,7 +40,7 @@ function AppProvider({ children }: Props) {
 
   const getNextCharacter = () => {
     if (characters.length < 8) {
-      setCharacters([eightCharacterList[characters.length], ...characters]);
+      setCharacters([...characters, eightCharacterList[characters.length]]);
     }
   };
 

@@ -5,15 +5,14 @@ import CharacterCard from './CharacterCard';
 const CharacterListStyled = styled.ul`
   list-style: none;
   display: flex;
-  flex-direction: column;
   align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 500px;
   div {
     margin: 10px 30px;
   }
   @media screen and (min-width: 600px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
     max-width: 1500px;
   }
 `;

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import AppContext from '../context/AppContext';
-import scrollTop from '../helpers/scrollTop';
+import { scrollTop } from '../helpers/scroll';
 import Button, { ButtonProps } from './Button';
 
 function ButtonShuffleCards({ large }: ButtonProps) {
