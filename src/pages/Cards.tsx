@@ -3,7 +3,8 @@ import CharacterList from '../components/CharacterList';
 import AppContext from '../context/AppContext';
 
 function Cards() {
-  const { characters, loadCharacters } = useContext(AppContext);
+  const { characters, loadCharacters, getNextCharacter } =
+    useContext(AppContext);
 
   useEffect(() => {
     loadCharacters();
@@ -13,6 +14,15 @@ function Cards() {
   return (
     <div>
       <CharacterList characters={characters} />
+      <div>
+        <button
+          disabled={characters.length === 8}
+          type="button"
+          onClick={getNextCharacter}
+        >
+          Puxar
+        </button>
+      </div>
     </div>
   );
 }

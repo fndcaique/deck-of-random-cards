@@ -38,6 +38,12 @@ function AppProvider({ children }: Props) {
     navigate('/');
   };
 
+  const getNextCharacter = () => {
+    if (characters.length < 8) {
+      setCharacters([...characters, eightCharacterList[characters.length]]);
+    }
+  };
+
   const contextValue = {
     username,
     characters,
@@ -45,6 +51,7 @@ function AppProvider({ children }: Props) {
     login,
     logout,
     loadCharacters,
+    getNextCharacter,
   };
 
   return (
