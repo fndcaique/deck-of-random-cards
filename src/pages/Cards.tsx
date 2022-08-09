@@ -1,10 +1,17 @@
 import { useContext, useEffect } from 'react';
+import styled from 'styled-components';
 import CharacterList from '../components/CharacterList';
 import AppContext from '../context/AppContext';
 
+const CardsStyled = styled.div`
+  margin-bottom: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 function Cards() {
-  const { characters, loadCharacters, getNextCharacter, shuffle } =
-    useContext(AppContext);
+  const { characters, loadCharacters } = useContext(AppContext);
 
   useEffect(() => {
     loadCharacters();
@@ -12,21 +19,9 @@ function Cards() {
   }, []);
 
   return (
-    <div>
+    <CardsStyled>
       <CharacterList characters={characters} />
-      <div>
-        <button
-          disabled={characters.length === 8}
-          type="button"
-          onClick={getNextCharacter}
-        >
-          Puxar
-        </button>
-        <button type="button" onClick={shuffle}>
-          Embaralhar
-        </button>
-      </div>
-    </div>
+    </CardsStyled>
   );
 }
 

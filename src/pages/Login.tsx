@@ -1,5 +1,38 @@
 import { useContext, useState } from 'react';
+import styled from 'styled-components';
+import Button from '../components/Button';
 import AppContext from '../context/AppContext';
+
+const LoginStyled = styled.div`
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    color: #0047ba;
+    border: 2px solid #0047ba;
+    border-radius: 10px;
+    height: 150px;
+    width: 250px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    input {
+      border-style: none;
+      width: 100%;
+      color: #0047ba;
+      border-bottom: 2px solid #0047ba;
+      font-size: 20px;
+      height: 30px;
+      padding: 7px;
+      :focus {
+        outline: none;
+      }
+    }
+  }
+`;
 
 function Login() {
   const [name, setName] = useState('');
@@ -7,15 +40,15 @@ function Login() {
 
   const isFormValid = () => name.length > 0;
   return (
-    <div>
+    <LoginStyled>
       <form
         onSubmit={(event) => {
           event.preventDefault();
           login(name);
         }}
       >
-        <label htmlFor="name">
-          Nome
+        <div>
+          <label htmlFor="name">Informe seu nome</label>
           <input
             id="name"
             type="text"
@@ -23,12 +56,12 @@ function Login() {
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
-        </label>
-        <button type="submit" disabled={!isFormValid()}>
+        </div>
+        <Button type="submit" disabled={!isFormValid()}>
           Entrar
-        </button>
+        </Button>
       </form>
-    </div>
+    </LoginStyled>
   );
 }
 

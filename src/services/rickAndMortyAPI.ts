@@ -1,5 +1,5 @@
+import genRandomIntegerNumber from '../helpers/genRandomIntegerNumber';
 import { Character } from '../types/Character';
-import genRandomIntegerNumber from './genRandomIntegerNumber';
 
 const NUMBERS_OF_PAGES = 40; // real = 42
 const BASE_URL = 'https://rickandmortyapi.com/api/character';

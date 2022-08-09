@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import getNRandomItems from '../services/getNRandomItems';
+import getNRandomItems from '../helpers/getNRandomItems';
 import { fetchCharactersFromRandomPage } from '../services/rickAndMortyAPI';
 import { removeUser, saveUser } from '../services/userStorage';
 import { Character } from '../types/Character';
@@ -40,7 +40,7 @@ function AppProvider({ children }: Props) {
 
   const getNextCharacter = () => {
     if (characters.length < 8) {
-      setCharacters([...characters, eightCharacterList[characters.length]]);
+      setCharacters([eightCharacterList[characters.length], ...characters]);
     }
   };
 
