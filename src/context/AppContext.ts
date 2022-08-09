@@ -9,6 +9,7 @@ export type AppContextType = {
   logout: () => void;
   loadCharacters: () => void;
   getNextCharacter: () => void;
+  shuffle: () => void;
 };
 
 const defaultFunction = () => console.log('default function');
@@ -21,6 +22,7 @@ const INITIAL_CONTEXT_VALUE: AppContextType = {
   logout: defaultFunction,
   loadCharacters: defaultFunction,
   getNextCharacter: defaultFunction,
+  shuffle: defaultFunction,
 };
 
 const AppContext = createContext<AppContextType>(INITIAL_CONTEXT_VALUE);

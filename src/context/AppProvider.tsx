@@ -44,6 +44,11 @@ function AppProvider({ children }: Props) {
     }
   };
 
+  const shuffle = () => {
+    const shuffledCharacters = [...characters].sort(() => 0.5 - Math.random());
+    setCharacters(shuffledCharacters);
+  };
+
   const contextValue = {
     username,
     characters,
@@ -52,6 +57,7 @@ function AppProvider({ children }: Props) {
     logout,
     loadCharacters,
     getNextCharacter,
+    shuffle,
   };
 
   return (

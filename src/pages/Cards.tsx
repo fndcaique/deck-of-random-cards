@@ -3,7 +3,7 @@ import CharacterList from '../components/CharacterList';
 import AppContext from '../context/AppContext';
 
 function Cards() {
-  const { characters, loadCharacters, getNextCharacter } =
+  const { characters, loadCharacters, getNextCharacter, shuffle } =
     useContext(AppContext);
 
   useEffect(() => {
@@ -21,6 +21,9 @@ function Cards() {
           onClick={getNextCharacter}
         >
           Puxar
+        </button>
+        <button type="button" onClick={shuffle}>
+          Embaralhar
         </button>
       </div>
     </div>
