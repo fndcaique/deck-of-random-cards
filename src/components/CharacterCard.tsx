@@ -23,19 +23,19 @@ function CharacterCard({
   character: { name, image, description, score },
 }: Props) {
   return (
-    <CharacterCardStyled>
+    <CharacterCardStyled data-testid="character-card">
       <img src={image} alt={name} />
       <p>
         <span>Score:</span>
-        <strong> {score}</strong>
+        <strong data-testid="score"> {score}</strong>
       </p>
       <p>
         <span>Name:</span>
-        <strong> {name}</strong>
+        <strong data-testid="name"> {name}</strong>
       </p>
       <p>
         <span>Description:</span>
-        <strong> {description}</strong>
+        <strong data-testid="description"> {description}</strong>
       </p>
     </CharacterCardStyled>
   );

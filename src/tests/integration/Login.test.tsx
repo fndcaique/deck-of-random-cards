@@ -6,8 +6,11 @@ import {
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import App from '../../App';
+import '../mockFetch';
+import mockFetch from '../mockFetch';
 
 const setup = () => {
+  mockFetch();
   render(
     <MemoryRouter>
       <App />
@@ -56,5 +59,7 @@ describe('Login integration', () => {
 
     const headerUsername = screen.getByTestId('header-username');
     expect(headerUsername).toBeInTheDocument();
+
+    expect(global.fetch).toHaveBeenCalled();
   });
 });
