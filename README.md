@@ -47,7 +47,7 @@ Após a pasta de compilação ficar pronta para ser implantada.
 Você pode servi-lo com um servidor estático:
 
 - `npm install -g serve`
-- `servir -s construir`
+- `serve -s build`
 
 ## Aprender mais
 
