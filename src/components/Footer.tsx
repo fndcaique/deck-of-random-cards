@@ -3,6 +3,7 @@ import ButtonGetNextCard from './ButtonGetNextCard';
 import ButtonShuffleCards from './ButtonShuffleCards';
 
 const FooterStyled = styled.footer`
+  background-color: #0047ba;
   position: fixed;
   bottom: 0;
   width: 100%;
